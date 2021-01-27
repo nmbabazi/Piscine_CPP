@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 09:45:05 by nmbabazi          #+#    #+#             */
-/*   Updated: 2021/01/27 18:38:02 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:28:03 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>
+# include <iomanip>
 
 #define MAX_CONTACT 8
 

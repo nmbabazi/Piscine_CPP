@@ -6,12 +6,10 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 12:25:06 by nmbabazi          #+#    #+#             */
-/*   Updated: 2021/01/27 18:59:16 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:37:04 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 #include "phonebook.hpp"
 
 Phonebook::Phonebook()
@@ -76,18 +74,15 @@ void    Phonebook::addcontact(void)
 
 void    Phonebook::_printField(std::string field)
 {
-	if (field.length() == 10)
-		std::cout << field;
-	else if (field.length() > 10)
+	if (field.length() > 10)
 	{
 		field.erase(9, (field.length() - 9));
 		std::cout << field << ".";
 	}
-	else if (field.length() < 10)
+	else if (field.length() <= 10)
 	{
-		for (int i = 10 - field.length(); i > 0; i--)
-			std::cout << " ";
-		std::cout << field;
+		std::cout << std::setfill (' ') << std::setw (10);
+  		std::cout << field;
 	}
 	std::cout << "|";
 	return ;
