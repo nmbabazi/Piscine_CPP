@@ -1,18 +1,19 @@
-  
 NAME = phonebook
 
-CFLAGS  = -Wall -Wextra -Werror -g
+CFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 SRCS = 	main.cpp \
 		phonebook.cpp \
 		contact.cpp \
 
-OBJSRCS = $(SRCS:.cpp=.o) 
+OBJSRCS = $(SRCS:.cpp=.o)
+
+COMPILATOR = clang++
 
 $(NAME) : $(OBJSRCS)
 	@echo "[Remove last version...]"
 	@rm -rf phonebook
-	@clang++ $(CFLAGS) -I phonebook.hpp -o $(NAME) $(OBJSRCS) -lpthread
+	$(COMPILATOR) $(CFLAGS) -I phonebook.hpp -o $(NAME) $(OBJSRCS) 
 	@./phonebook
 
 all : $(NAME)

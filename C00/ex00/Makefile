@@ -1,17 +1,18 @@
   
 NAME = megaphone
 
-CFLAGS  = -Wall -Wextra -Werror -g
+CFLAGS  = -Wall -Wextra -Werror -std=c++98
 
-SRCS = 	main.cpp \
-		megaphone.cpp \
+SRCS = 	megaphone.cpp \
 
-OBJSRCS = $(SRCS:.cpp=.o) 
+OBJSRCS = $(SRCS:.cpp=.o)
+
+COMPILATOR = clang++
 
 $(NAME) : $(OBJSRCS)
 	@echo "[Remove last version...]"
 	@rm -rf megaphone
-	@clang++ $(CFLAGS) -o $(NAME) $(OBJSRCS) -lpthread
+	$(COMPILATOR) $(CFLAGS) -o $(NAME) $(OBJSRCS)
 	@echo "DONE !"
 
 all : $(NAME)
@@ -22,4 +23,4 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re : fclean all
+re : fclean al
