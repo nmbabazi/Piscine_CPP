@@ -11,8 +11,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 #include "phonebook.hpp"
 
 Contact::Contact(){}
@@ -49,27 +47,27 @@ std::string Contact::getField(std::string field)
 void Contact::fillField(std::string field, std::string input)
 {
 	if (!field.compare("fname"))
-			this->_fname = input;
+		this->_fname = input;
 	if (!field.compare("lname"))
-			this->_lname = input;
+		this->_lname = input;
 	if (!field.compare("nickname"))
-			this->_nickname = input;
+		this->_nickname = input;
 	if (!field.compare("login"))
-			this->_login = input;
+		this->_login = input;
 	if (!field.compare("address"))
-			this->_address = input;
+		this->_address = input;
 	if (!field.compare("email"))
-			this->_email = input;
+		this->_email = input;
 	if (!field.compare("phone"))
-			this->_phone = input;
+		this->_phone = input;
 	if (!field.compare("birthday"))
-			this->_birthday = input;
+		this->_birthday = input;
 	if (!field.compare("meal"))
-			this->_meal = input;
+		this->_meal = input;
 	if (!field.compare("underwear"))
-	this->_underwear = input;
+		this->_underwear = input;
 	if (!field.compare("secret"))
-			this->_secret = input;
+		this->_secret = input;
 }
 
 void    Contact::printContact()
