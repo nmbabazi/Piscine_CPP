@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 14:02:03 by nailambz          #+#    #+#             */
-/*   Updated: 2021/01/28 17:51:06 by nailambz         ###   ########.fr       */
+/*   Created: 2021/01/29 12:47:05 by nailambz          #+#    #+#             */
+/*   Updated: 2021/01/29 14:34:54 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
 # include <iostream>
-# include <iomanip> 
+# include <stdlib.h>
+# include <time.h> 
+# include "Zombie.hpp"
 
-class   Pony
+class   ZombieHorde
 {
-
 private:
-    std::string _name;
-    std::string _breed;
-    
+        Zombie *_horde;
+        int     _size;
+
 public:
-
-    Pony(std::string name, std::string breed);
-    ~Pony();
-
-    void ponyJump(void);
+    ZombieHorde(int N);
+    ~ZombieHorde();
+    std::string    chooseRandomly(std::string from, int i);
+    void    announce();
 };
 
 #endif

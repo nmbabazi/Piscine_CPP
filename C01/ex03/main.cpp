@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 14:02:03 by nailambz          #+#    #+#             */
-/*   Updated: 2021/01/28 17:51:06 by nailambz         ###   ########.fr       */
+/*   Created: 2021/01/28 18:26:52 by nailambz          #+#    #+#             */
+/*   Updated: 2021/01/29 14:43:37 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include "ZombieHorde.hpp"
 
-# include <iostream>
-# include <iomanip> 
-
-class   Pony
+int main()
 {
-
-private:
-    std::string _name;
-    std::string _breed;
+    std::string input;
+    std::string::size_type sz;
     
-public:
-
-    Pony(std::string name, std::string breed);
-    ~Pony();
-
-    void ponyJump(void);
-};
-
-#endif
+    std::cout << "Welcom to the zombie factorie" << std::endl;
+    std::cout << "      How many zombie do you need :";
+    std::getline (std::cin,input);
+    ZombieHorde zombieHorde(std::stoi(input, &sz));
+    zombieHorde.announce();
+    return (0);
+}

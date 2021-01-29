@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 14:02:03 by nailambz          #+#    #+#             */
-/*   Updated: 2021/01/28 17:51:06 by nailambz         ###   ########.fr       */
+/*   Created: 2021/01/28 18:26:52 by nailambz          #+#    #+#             */
+/*   Updated: 2021/01/29 11:53:08 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include "ZombieEvent.hpp"
 
-# include <iostream>
-# include <iomanip> 
-
-class   Pony
+int main(int ac, char **av)
 {
+    ZombieEvent zombieEvent;
 
-private:
-    std::string _name;
-    std::string _breed;
-    
-public:
-
-    Pony(std::string name, std::string breed);
-    ~Pony();
-
-    void ponyJump(void);
-};
-
-#endif
+    if (ac == 2)
+        delete zombieEvent.newZombie(av[1]);
+    else 
+        zombieEvent.randomChump();
+    return (0);
+}
