@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 12:47:33 by nailambz          #+#    #+#             */
-/*   Updated: 2021/01/29 14:37:12 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/01/30 15:09:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ ZombieHorde::ZombieHorde(int N)
     this->_horde = new Zombie[N];
     for (int i = 0 ; i < N; i++)
     {
-        this->_horde[i].chooseName(this->chooseRandomly("name", i));
-        this->_horde[i].chooseType(this->chooseRandomly("type", i));
+        this->_horde[i].chooseName(this->chooseRandomly("name", i + 1));
+        this->_horde[i].chooseType(this->chooseRandomly("type", i + 1));
     }
 }
 
@@ -30,7 +30,7 @@ ZombieHorde::~ZombieHorde()
 
 std::string  ZombieHorde::chooseRandomly(std::string from, int i)
 {
-    srand (i);
+    srand (time(NULL) + i);
     const char *type[] = {"Generic", "Walker", "Stalker", "Crawler", "Intelligent"};
 	const char *name[] = {"Michonne", "Rick", "Glenn", "Negan", "Daryl", "Hershel", "Carl", "Judith", "Laury", "Eugene", "Sacha"};
     if (!from.compare("name"))

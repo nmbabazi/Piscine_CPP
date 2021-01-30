@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 18:26:52 by nailambz          #+#    #+#             */
-/*   Updated: 2021/01/29 14:43:37 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/01/30 15:13:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ int main()
     
     std::cout << "Welcom to the zombie factorie" << std::endl;
     std::cout << "      How many zombie do you need :";
-    std::getline (std::cin,input);
+    while (std::getline (std::cin,input))
+	{
+		if (!isdigit(input[0]))
+			std::cout << "      ERROR number: How many zombie do you need: ";
+		else
+			break ;
+	}
     ZombieHorde zombieHorde(std::stoi(input, &sz));
     zombieHorde.announce();
     return (0);
