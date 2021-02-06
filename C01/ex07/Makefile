@@ -12,7 +12,7 @@ $(NAME) : $(OBJSRCS)
 	@echo "[Remove last version...]"
 	@rm -rf replace
 	$(COMPILATOR) $(CFLAGS) -o $(NAME) $(OBJSRCS)
-	@echo "DONE !"
+	@./replace "file" "t" "p"
 
 all : $(NAME)
 
@@ -22,4 +22,4 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re : fclean al
+re : fclean all
