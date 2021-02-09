@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*    ClapTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/06 17:51:11 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 12:09:32 by nailambz         ###   ########.fr       */
+/*   Created: 2021/02/09 12:08:30 by nailambz          #+#    #+#             */
+/*   Updated: 2021/02/09 12:38:45 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef  CLAPTRAP_HPP
+# define  CLAPTRAP_HPP
 
 # include <iostream>
 # include <string>
-# include <stdlib.h>
 
-class FragTrap
+class  ClapTrap
 {
 
 	public:
 
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(FragTrap const & src);
-		~FragTrap();
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(  ClapTrap const & src );
+		~ ClapTrap();
 
-		FragTrap &		operator=(FragTrap const & rhs);
+		ClapTrap &		operator=(  ClapTrap const & rhs );
 		unsigned int	rangedAttack(std::string const & target);
 		unsigned int	meleeAttack(std::string const & target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
-		unsigned int	vaulthunter_dot_exe(std::string const & target);
-		void			sniperAttack(std::string const & target);
-		void			rocketAttack(std::string const & target);
-		void			laserAttack(std::string const & target);
 		void			setEnergyPoint(unsigned int amount);
 
 		std::string 	getName();
@@ -47,9 +42,9 @@ class FragTrap
 		int 			getMeleeAttackDamage();
 		int 			getRangedAttackDamage();
 		int 			getArmorDamageReduction();
-		
- 
-	private:
+
+	protected:
+
 		std::string		_name;
 		int				_hitPoints;
 		unsigned int	_maxHit;
@@ -59,6 +54,7 @@ class FragTrap
 		int				_meleeAttack;
 		int				_rangeAttack;
 		int				_armorDamage;
+
 };
 
-#endif 
+#endif

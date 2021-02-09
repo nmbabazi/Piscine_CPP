@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 17:51:11 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 11:54:36 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 12:09:40 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <iostream>
 # include <string>
 # include <stdlib.h>
-# include <time.h> 
 
 class FragTrap
 {
