@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*    ClapTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 10:24:48 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 16:13:28 by nailambz         ###   ########.fr       */
+/*   Created: 2021/02/09 12:08:30 by nailambz          #+#    #+#             */
+/*   Updated: 2021/02/09 15:02:21 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCRAVTRAP_HPP
-# define SCRAVTRAP_HPP
+#ifndef  CLAPTRAP_HPP
+# define  CLAPTRAP_HPP
 
 # include <iostream>
 # include <string>
-# include <time.h> 
-# include "FragTrap.hpp"
 
-class ScravTrap
+class  ClapTrap
 {
 
 	public:
 
-		ScravTrap();
-		ScravTrap(std::string name);
-		ScravTrap( ScravTrap const & src );
-		~ScravTrap();
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(  ClapTrap const & src );
+		~ ClapTrap();
 
-		ScravTrap &		operator=( ScravTrap const & rhs );
+		ClapTrap &		operator=(  ClapTrap const & rhs );
 		unsigned int	rangedAttack(std::string const & target);
 		unsigned int	meleeAttack(std::string const & target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
-		int				challengeNewcomer(FragTrap & target);
+		void			setEnergyPoint(int amount);
 
 		std::string 	getName();
 		int				getHitPoints();
@@ -45,7 +43,7 @@ class ScravTrap
 		int 			getRangedAttackDamage();
 		int 			getArmorDamageReduction();
 
-	private:
+	protected:
 
 		std::string		_name;
 		int				_hitPoints;
@@ -59,4 +57,4 @@ class ScravTrap
 
 };
 
-#endif 
+#endif

@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:51:49 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 12:06:23 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:09:29 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 		return ;
 	_hitPoints -= (amount - _armorDamage);
 	if (_hitPoints < 1)
-	{
 		_hitPoints = 0;
-	}
 	std::cout << "FR4G-TP " << _name << ": has been attacked and has " << _hitPoints
 		<< " hit points left" << std::endl;
 }
@@ -151,12 +149,3 @@ int FragTrap::getMeleeAttackDamage(){ return _meleeAttack;}
 int FragTrap::getRangedAttackDamage(){ return _rangeAttack;}
 int FragTrap::getArmorDamageReduction(){ return _armorDamage;}
 
-void	FragTrap::setEnergyPoint(unsigned int amount)
-{
-	if ((_energyPoints+ amount) > _maxEnergy)
-		_energyPoints = _maxEnergy;
-	else 
-		_energyPoints += amount;
-	std::cout << "FR4G-TP " << _name << ": has been repaired of " << amount
-		<< " energy points, ready to fight again!" << std::endl;
-}

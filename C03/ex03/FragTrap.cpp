@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:51:49 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 16:11:09 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 12:48:09 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 FragTrap::FragTrap(){}
 
-FragTrap::FragTrap(std::string name):_name(name), _hitPoints(100), _maxHit(100),
-								_energyPoints(100), _maxEnergy(100), _level(1),
-								_meleeAttack(30), _rangeAttack(20), _armorDamage(5)
+FragTrap::FragTrap(std::string name):ClapTrap(name)
 {
-	std::cout << "Building off FR4G-TP " << _name << std::endl;
+	std::cout << "Building off FR4G-TP " << name << std::endl;
+	_hitPoints = 100;
+	_maxHit = 100;
+	_energyPoints = 100;
+	_maxEnergy = 100;
+	_level = 1;
+	_meleeAttack= 30;
+	_rangeAttack = 20;
+	_armorDamage = 5;
 }
 
 FragTrap::FragTrap( const FragTrap & src )
@@ -29,7 +35,7 @@ FragTrap::FragTrap( const FragTrap & src )
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destruction off FR4G-TP" << _name << " but he always come back" 
+	std::cout << "Destruction off FR4G-TP " << _name << " but he always come back" 
 		<< std::endl;
 }
 
@@ -50,20 +56,6 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 	return *this;
 }
 
-unsigned int	FragTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << _name << ": attacks " << target << " at range, causing "
-				<< _rangeAttack << " points of damage !" << std::endl;
-	return (_rangeAttack);
-}
-
-unsigned int	FragTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << _name << ": attacks " << target
-		<< " in a melee attack, causing " << _meleeAttack << " points of damage !"
-		<< std::endl;
-	return (_meleeAttack);
-}
 
 void	FragTrap::sniperAttack(std::string const & target)
 {
@@ -81,31 +73,6 @@ void	FragTrap::laserAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP " << _name << ": attacks " << target << " with a laser, causing"
 			<< " 70" << " points of damage !" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	if (amount == 0)
-		return ;
-	_hitPoints -= (amount - _armorDamage);
-	if (_hitPoints < 1)
-		_hitPoints = 0;
-	std::cout << "FR4G-TP " << _name << ": has been attacked and has " << _hitPoints
-		<< " hit points left" << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	if ((_hitPoints + amount) > _maxHit)
-		_hitPoints = _maxHit;
-	else 
-		_hitPoints += amount;
-	if ((_energyPoints+ amount) > _maxEnergy)
-		_energyPoints = _maxEnergy;
-	else 
-		_energyPoints += amount;
-	std::cout << "FR4G-TP " << _name << ": has been repaired of " << amount
-		<< " points, ready to fight again!" << std::endl;
 }
 
 unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
@@ -137,30 +104,4 @@ unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
             return (10);
     }
 	return (0);
-}
-
-std::string FragTrap::getName(){ return _name;}
-int FragTrap::getHitPoints(){ return _hitPoints;}
-unsigned int FragTrap::getMaxHitPoints(){ return _maxHit;}
-int FragTrap::getEnergyPoints(){ return _energyPoints;}
-unsigned int FragTrap::getMaxEnergyPoints(){ return _maxEnergy;}
-int FragTrap::getLevel(){ return _level;}
-int FragTrap::getMeleeAttackDamage(){ return _meleeAttack;}
-int FragTrap::getRangedAttackDamage(){ return _rangeAttack;}
-int FragTrap::getArmorDamageReduction(){ return _armorDamage;}
-
-void	FragTrap::setEnergyPoint(unsigned int amount)
-{
-	if ((_energyPoints + amount) > (int)_maxEnergy)
-		_energyPoints = _maxEnergy;
-	if ((_energyPoints + amount) < 0)
-		_energyPoints = 0;
-	else 
-		_energyPoints += amount;
-	if (amount > 0)
-		std::cout << _name << ": has been repaired of " << amount
-			<< " energy points, ready to fight again!" << std::endl;
-	if (amount < 0)
-		std::cout << _name << ": get " << amount
-			<< " energy points, sorry :p " << std::endl;
 }

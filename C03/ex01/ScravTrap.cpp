@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:23:58 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 11:47:50 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:14:46 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,7 @@ void	ScravTrap::takeDamage(unsigned int amount)
 		return ;
 	_hitPoints -= (amount - _armorDamage);
 	if (_hitPoints < 1)
-	{
 		_hitPoints = 0;
-		std::cout << "SCR4V-TP " << _name << ": has been attacked and has " << _hitPoints
-			<< " hit points left" << std::endl;
-		return ;
-	}
 	std::cout << "SCR4V-TP " << _name << ": has been attacked and has " << _hitPoints
 		<< " hit points left" << std::endl;
 }
@@ -92,7 +87,7 @@ void	ScravTrap::beRepaired(unsigned int amount)
 	else 
 		_energyPoints += amount;
 	std::cout << "SCR4V-TP " << _name << ": has been repaired of " << amount
-		<< " points, ready to open doors!" << std::endl;
+		<< " points, ready to fight again!" << std::endl;
 }
 
 int	ScravTrap::challengeNewcomer(FragTrap & target)
@@ -110,3 +105,12 @@ int	ScravTrap::challengeNewcomer(FragTrap & target)
 	return (0);
 }
 
+std::string ScravTrap::getName(){ return _name;}
+int ScravTrap::getHitPoints(){ return _hitPoints;}
+unsigned int ScravTrap::getMaxHitPoints(){ return _maxHit;}
+int ScravTrap::getEnergyPoints(){ return _energyPoints;}
+unsigned int ScravTrap::getMaxEnergyPoints(){ return _maxEnergy;}
+int ScravTrap::getLevel(){ return _level;}
+int ScravTrap::getMeleeAttackDamage(){ return _meleeAttack;}
+int ScravTrap::getRangedAttackDamage(){ return _rangeAttack;}
+int ScravTrap::getArmorDamageReduction(){ return _armorDamage;}
