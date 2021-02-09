@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SuperTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 15:33:24 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 16:03:45 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:41:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 SuperTrap::SuperTrap(){}
 
-SuperTrap::SuperTrap(std::string name):ClapTrap(name),FragTrap(), NinjaTrap()
+SuperTrap::SuperTrap(std::string name):ClapTrap(name),FragTrap(name), NinjaTrap(name)
 {
 	std::cout << "Building off SUPERT-TP " << name << std::endl;
 	_hitPoints = FragTrap::_hitPoints;

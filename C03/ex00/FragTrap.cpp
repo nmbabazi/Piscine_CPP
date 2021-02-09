@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:51:49 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 16:09:29 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:27:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap( const FragTrap & src )
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destruction off FR4G-TP" << _name << " but he always come back" 
+	std::cout << "Destruction off FR4G-TP " << _name << " but he always come back" 
 		<< std::endl;
 }
 

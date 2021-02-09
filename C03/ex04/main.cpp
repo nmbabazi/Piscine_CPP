@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 15:28:30 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 15:52:59 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:42:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main()
     Naruto.ninjaShoebox(Lilith);
     std::cout << "             Fusion wants to avange his friends Brick"
         << std::endl;
-    Lilith.takeDamage(Fusion.vaulthunter_dot_exe("Birck"));
+    Lilith.takeDamage(Fusion.vaulthunter_dot_exe("Lilith"));
     Fusion.ninjaShoebox(Naruto);
     return (0);
 }

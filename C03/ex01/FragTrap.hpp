@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 17:51:11 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 12:09:32 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:30:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class FragTrap
 		void			sniperAttack(std::string const & target);
 		void			rocketAttack(std::string const & target);
 		void			laserAttack(std::string const & target);
-		void			setEnergyPoint(unsigned int amount);
+		void			setEnergyPoint(int amount);
 
 		std::string 	getName();
 		int				getHitPoints();

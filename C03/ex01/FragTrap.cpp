@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 11:51:49 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 16:11:09 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:32:50 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap( const FragTrap & src )
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destruction off FR4G-TP" << _name << " but he always come back" 
+	std::cout << "Destruction off FR4G-TP " << _name << " but he always come back" 
 		<< std::endl;
 }
 
@@ -149,7 +149,7 @@ int FragTrap::getMeleeAttackDamage(){ return _meleeAttack;}
 int FragTrap::getRangedAttackDamage(){ return _rangeAttack;}
 int FragTrap::getArmorDamageReduction(){ return _armorDamage;}
 
-void	FragTrap::setEnergyPoint(unsigned int amount)
+void	FragTrap::setEnergyPoint(int amount)
 {
 	if ((_energyPoints + amount) > (int)_maxEnergy)
 		_energyPoints = _maxEnergy;
@@ -158,7 +158,7 @@ void	FragTrap::setEnergyPoint(unsigned int amount)
 	else 
 		_energyPoints += amount;
 	if (amount > 0)
-		std::cout << _name << ": has been repaired of " << amount
+		std::cout << "FR4G-TP " << _name << ": has been repaired of " << amount
 			<< " energy points, ready to fight again!" << std::endl;
 	if (amount < 0)
 		std::cout << _name << ": get " << amount
