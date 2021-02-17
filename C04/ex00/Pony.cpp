@@ -6,19 +6,17 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:19:14 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/10 09:28:03 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:23:52 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-Pony::Pony()
-{
-}
+Pony::Pony(){}
 
 Pony::Pony(std::string name): Victim(name)
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "hiihaaa" << std::endl;
 }
 
 Pony::Pony( const Pony & src )
@@ -28,10 +26,7 @@ Pony::Pony( const Pony & src )
 }
 
 
-Pony::~Pony()
-{
-	std::cout << "Bleuark..." << std::endl;
-}
+Pony::~Pony(){std::cout << "BYE..." << std::endl;}
 
 Pony &				Pony::operator=( Pony const & rhs )
 {

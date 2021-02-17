@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 15:34:03 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/17 10:29:10 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:57:56 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,17 @@ int main()
     boby->equip(tmp);
     me->use(2, *bob);
     boby->use(2, *me);
+    std::cout << "      Unequip an non-existant" << std::endl; 
+    me->unequip(2);
+    std::cout << "      Iventory full" << std::endl; 
+    tmp = src->createMateria("ice");
+    boby->equip(tmp);
+    boby->equip(tmp);
+    boby->equip(tmp);
     
-    //delete boby;
+    delete boby;
     delete bob;
     delete me;
     delete src;
-    system("leaks a.out");
     return 0;
 }

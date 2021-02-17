@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 12:58:11 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/10 15:45:06 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:36:07 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 int main()
 {
+    	std::cout << std::endl << std::endl;
     Character* me = new Character("me");
     std::cout << *me;
     Enemy* b = new RadScorpion();

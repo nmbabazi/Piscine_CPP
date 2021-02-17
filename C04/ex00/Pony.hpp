@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:10:50 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/10 11:21:43 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:10:23 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Pony : public Victim
 		Pony(std::string name);
 		Pony( Pony const & src );
 		virtual ~Pony();
-
 		Pony &			operator=( Pony const & rhs );
+		
 		virtual void	getPolymorphed() const;
 
 	private:

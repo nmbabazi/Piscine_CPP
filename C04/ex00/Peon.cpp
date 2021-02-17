@@ -6,15 +6,13 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:19:14 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 19:32:10 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:09:56 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
 
-Peon::Peon()
-{
-}
+Peon::Peon(){}
 
 Peon::Peon(std::string name): Victim(name)
 {
@@ -28,12 +26,9 @@ Peon::Peon( const Peon & src )
 }
 
 
-Peon::~Peon()
-{
-	std::cout << "Bleuark..." << std::endl;
-}
+Peon::~Peon(){std::cout << "Bleuark..." << std::endl;}
 
-Peon &				Peon::operator=( Peon const & rhs )
+Peon &	Peon::operator=( Peon const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -42,7 +37,7 @@ Peon &				Peon::operator=( Peon const & rhs )
 	return *this;
 }
 
-void			Peon::getPolymorphed() const
+void Peon::getPolymorphed() const
 {
 	std::cout << _name << " has been turned into a pink pony!" << std::endl;
 }

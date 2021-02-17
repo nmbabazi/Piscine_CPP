@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 11:34:00 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/13 11:49:10 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:55:42 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 int main()
 {
+    std::cout << std::endl << std::endl;
     ISpaceMarine* bob = new TacticalMarine;
     ISpaceMarine* jim = new AssaultTerminator;
     ISquad* vlc = new Squad;

@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 18:11:38 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/11 13:22:57 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:55:18 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ TacticalMarine &TacticalMarine::operator=( TacticalMarine const & rhs )
 
 ISpaceMarine* TacticalMarine::clone() const
 {
-	ISpaceMarine *newMarine = new TacticalMarine();
-	*newMarine = *this;	
-	return (newMarine);
+	return (new TacticalMarine(*this));
 }
 
 void TacticalMarine::battleCry() const

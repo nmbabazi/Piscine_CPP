@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:24:54 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/10 15:49:51 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:19:27 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int main()
 {
+    std::cout << std::endl << std::endl;
     std::ofstream output("presentation");
     Sorcerer robert("Robert", "the Magnificent");
     Victim jim("Jimmy");

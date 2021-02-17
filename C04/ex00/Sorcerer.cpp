@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:34:41 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/09 19:33:44 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:11:08 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ Sorcerer::Sorcerer( const Sorcerer & src )
 
 Sorcerer::~Sorcerer()
 {
-	std::cout << _name <<", " << _title << ", is dead. Consequences will never be the same!"
-		<< std::endl;
+	std::cout << _name <<", " << _title 
+		<< ", is dead. Consequences will never be the same!" << std::endl;
 }
 
 Sorcerer &				Sorcerer::operator=( Sorcerer const & rhs )
