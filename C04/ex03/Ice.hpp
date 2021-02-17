@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 11:20:25 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/12 16:35:32 by nailambz         ###   ########.fr       */
+/*   Created: 2021/02/15 11:41:17 by nailambz          #+#    #+#             */
+/*   Updated: 2021/02/16 16:10:30 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TACTICALMARINE_HPP
-# define TACTICALMARINE_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <iostream>
 # include <string>
-# include "ISpaceMarine.hpp"
+# include "AMateria.hpp"
 
-class TacticalMarine : public ISpaceMarine
+class Ice : public AMateria
 {
-	public:
-		TacticalMarine();
-		TacticalMarine(const TacticalMarine & src );
-		virtual ~TacticalMarine();
-		TacticalMarine &operator=( TacticalMarine const & rhs );
-		
-		ISpaceMarine* clone() const;
-		virtual void battleCry() const;
-		virtual void rangedAttack() const;
-		virtual void meleeAttack() const;
-	private:
 
+	public:
+		Ice();
+		Ice(const Ice &src);
+		~Ice();
+		Ice &		operator=(Ice const & rhs );
+
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter& target);
 
 };
 

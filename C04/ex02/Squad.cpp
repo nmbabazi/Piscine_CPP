@@ -6,74 +6,101 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:16:36 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/12 15:23:16 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/15 11:05:51 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad(): _count(0), _unit(NULL)
+Squad::Squad(): _unit(NULL)
 {
 }
 
 Squad::Squad( const Squad & src )
 {
-	this->operator=(src);
-	
+	*this = src;
 }
 
 Squad::~Squad()
 {
-	if (_unit)
-	{
-		for (int i = 0; i < _count; i++)
-			delete _unit[i];
-		delete _unit;
-	}
+		_lstClear();
 }
 
 Squad &	Squad::operator=( Squad const & rhs )
 {
-	if ( this != &rhs )
-	{
-		if (_unit)
-		{
-			for (int i = 0; i < _count; i++)
-				delete _unit[i];
-			delete _unit;
-			_unit = NULL;
-		}
-		for (int i = 0; i < rhs.getCount(); i++)
-			this->push(rhs.getUnit(i));
-		_count = rhs.getCount();
-	}
+	_lstClear();
+	for (int i = 0; i < rhs.getCount(); i++)
+		push(rhs.getUnit(i)->clone());
 	return *this;
 }
 
-int Squad::getCount() const{return _count;}
+int Squad::getCount() const
+{
+	t_list *iterator = _unit;
+	size_t len = 0;
+
+	while (iterator)
+	{
+		len++;
+		iterator = iterator->next;
+	}
+	return len;
+}
 
 ISpaceMarine* Squad::getUnit(int index) const
 {
-	if (index >= 0 && index < _count)
-		return _unit[index];
+	t_list *iterator = _unit;
+
+	while (iterator && index)
+	{
+		iterator = iterator->next;
+		index--;
+	}
+	if (iterator)
+		return iterator->spaceMarine;
 	return NULL;
 }
 
 int Squad::push(ISpaceMarine* topush)
 {
-	if (!topush)
-		return _count;
-	for (int i = 0; i < _count; i++)
-	{
-		if (_unit[i] == topush)
-			return _count;
+	t_list *iterator = _unit;
+	size_t len = 1;
+	
+	if (topush == NULL)
+		return getCount();
+	if (iterator == NULL)
+	{	
+		_unit = new t_list();		
+		_unit->spaceMarine = topush;
+		_unit->next = NULL;
+		return len;
 	}
-	ISpaceMarine **newUnit = new ISpaceMarine* [_count + 1];
-	for (int i = 0; i < _count ; i++)
-		newUnit[i] = _unit[i];
-	newUnit[_count] = topush;
-	delete[] _unit;
-	_unit = newUnit;
-	_count++;
-	return _count;
+	while (iterator->next)
+	{
+		if (iterator->spaceMarine == topush)
+			return getCount();
+		iterator = iterator->next;
+		len++;
+	}
+	if (iterator->spaceMarine == topush)
+		return len;
+	iterator->next = new t_list();		
+	iterator->next->spaceMarine = topush;
+	iterator->next->next = NULL;
+	return len + 1;
+}
+
+void Squad::_lstClear()
+{
+	t_list *iterator = _unit;
+	t_list *next;
+
+	while (iterator)
+	{
+		next = iterator->next;
+		delete iterator->spaceMarine;
+		delete iterator;
+		iterator = next;
+	}
+	_unit = NULL;
 }

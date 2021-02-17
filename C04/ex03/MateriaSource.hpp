@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 16:22:24 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/15 10:59:22 by nailambz         ###   ########.fr       */
+/*   Created: 2021/02/15 12:24:12 by nailambz          #+#    #+#             */
+/*   Updated: 2021/02/16 16:13:14 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
 # include <string>
-# include "ISquad.hpp"
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-class Squad : public ISquad
+class MateriaSource : public IMateriaSource
 {
 
 	public:
 
-		Squad();
-		Squad(const Squad & src );
-		virtual ~Squad();
-		Squad &		operator=( Squad const & rhs );
-				
-		virtual int getCount() const;
-		virtual ISpaceMarine* getUnit(int index) const;
-		virtual int push(ISpaceMarine* topush);
+		MateriaSource();
+		MateriaSource( MateriaSource const & src );
+		~MateriaSource();
+
+		MateriaSource &		operator=( MateriaSource const & rhs );
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 
 	private:
-		int	_count;
-		typedef struct s_list
-		{
-			ISpaceMarine *spaceMarine;
-			struct s_list *next;
-		} t_list;
-		
-		t_list *_unit;
-		void _lstClear();
+		AMateria *_sources[4];
+
 };
 
 #endif 

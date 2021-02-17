@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 11:34:00 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/12 15:23:58 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/13 11:49:10 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,22 @@ int main()
         cur->rangedAttack();
         cur->meleeAttack();
     }
+	std::cout << "count:" << vlc->getCount() << std::endl;
+	std::cout << "             push NULL" << std::endl;
+	vlc->push(NULL);
+	std::cout << "count:" << vlc->getCount() << std::endl;
+	std::cout << "             push same" << std::endl;
+	vlc->push(bob);
+    std::cout << "count:" << vlc->getCount() << std::endl;
+    std::cout << "             deep copy" << std::endl;
+    ISpaceMarine* jack = new AssaultTerminator;
+    ISquad* vlc2 = new Squad(*static_cast<Squad*>(vlc));
+    std::cout << "vlc2 count:" << vlc2->getCount() << std::endl;
+    std::cout << "count:" << vlc->getCount() << std::endl;
+    vlc2->push(jack);
+    std::cout << "vlc2 count:" << vlc2->getCount() << std::endl;
+    std::cout << "count:" << vlc->getCount() << std::endl;
+	delete vlc2;
     delete vlc;
     return 0;
 }

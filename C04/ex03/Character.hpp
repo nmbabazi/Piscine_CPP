@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 16:22:24 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/15 10:59:22 by nailambz         ###   ########.fr       */
+/*   Created: 2021/02/15 11:50:18 by nailambz          #+#    #+#             */
+/*   Updated: 2021/02/16 16:00:45 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <iostream>
 # include <string>
-# include "ISquad.hpp"
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class Squad : public ISquad
+class Character : public ICharacter
 {
 
 	public:
+		Character(std::string name);
+		Character( Character const & src );
+		~Character();
 
-		Squad();
-		Squad(const Squad & src );
-		virtual ~Squad();
-		Squad &		operator=( Squad const & rhs );
-				
-		virtual int getCount() const;
-		virtual ISpaceMarine* getUnit(int index) const;
-		virtual int push(ISpaceMarine* topush);
+		Character &		operator=( Character const & rhs );
+		std::string const & getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 
 	private:
-		int	_count;
-		typedef struct s_list
-		{
-			ISpaceMarine *spaceMarine;
-			struct s_list *next;
-		} t_list;
-		
-		t_list *_unit;
-		void _lstClear();
+		Character();
+		std::string _name;
+		AMateria *_inventory[4];
 };
 
 #endif 
