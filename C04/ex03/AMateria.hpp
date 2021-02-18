@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 11:24:27 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/16 15:57:43 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 12:22:54 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class AMateria
 {
 	private:
-		std::string _type;
 		unsigned int _xp;
+		std::string _type;
 		AMateria();
 		
 	public:

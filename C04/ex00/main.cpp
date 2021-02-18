@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:24:54 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/17 11:19:27 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 16:48:38 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     std::ofstream output("presentation");
     Sorcerer robert("Robert", "the Magnificent");
     Victim jim("Jimmy");
-    Peon joe("Joe");
+    u
     Victim *pegase = new Pony("Pegase");
     std::cout << robert << jim << joe << *pegase;
     robert.polymorph(jim);

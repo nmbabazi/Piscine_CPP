@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 16:22:24 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/15 10:59:22 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 12:21:44 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Squad : public ISquad
 		virtual int push(ISpaceMarine* topush);
 
 	private:
-		int	_count;
 		typedef struct s_list
 		{
 			ISpaceMarine *spaceMarine;

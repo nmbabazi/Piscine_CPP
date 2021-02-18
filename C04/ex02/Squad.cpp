@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:16:36 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/15 11:05:51 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 12:21:51 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Squad &	Squad::operator=( Squad const & rhs )
 int Squad::getCount() const
 {
 	t_list *iterator = _unit;
-	size_t len = 0;
+	int len = 0;
 
 	while (iterator)
 	{
@@ -64,7 +64,7 @@ ISpaceMarine* Squad::getUnit(int index) const
 int Squad::push(ISpaceMarine* topush)
 {
 	t_list *iterator = _unit;
-	size_t len = 1;
+	int len = 1;
 	
 	if (topush == NULL)
 		return getCount();

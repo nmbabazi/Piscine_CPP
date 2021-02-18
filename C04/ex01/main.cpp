@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 12:58:11 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/17 11:36:07 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:22:30 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@ int main()
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();
     me->equip(pr);
+
     std::cout << *me;
     me->equip(pf);
     me->attack(b);
     std::cout << *me;
     me->equip(pr);
+    std::cout << *me;
+    me->attack(b);
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
@@ -68,10 +71,9 @@ int main()
     me->attack(b); 
 
 	me->recoverAP();
-    std::cout << *me; 
+    std::cout << *me; */
     
     delete me;
-    delete b;
     delete pr;
     delete pf;
 
