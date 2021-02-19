@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 11:37:35 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 17:19:11 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:44:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ void	ShrubberyCreationForm::exec(Bureaucrat &bureaucrat) const
 	try
 	{
 		execute(bureaucrat);
-		std::string name = std::string(this->getTarget() + "_shrubbery"); 
-		std::ofstream output(name);
+		std::ofstream output((getTarget() + "_shrubbery").c_str());
 		const std::string tree = "\
 					v .   ._, |_  .,\n\
 				`-._\\/  .  \\ /    |/_\n\

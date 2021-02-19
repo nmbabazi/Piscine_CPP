@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:20:39 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 16:46:44 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:45:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int main()
     while (saly.getGrade() > 1)
         saly.incrementGrade();
     saly.executeForm(president);
+    delete rrf;
     return (0);
 }
