@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/19 11:35:38 by nailambz          #+#    #+#             */
+/*   Updated: 2021/02/19 13:03:09 by nailambz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
+
+# include <iostream>
+# include <string>
+#include <fstream>
+# include "Form.hpp"
+
+class RobotomyRequestForm : public Form
+{
+
+	public:
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm( RobotomyRequestForm const & src );
+		~RobotomyRequestForm();
+
+		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
+		void	exec(Bureaucrat &bureaucrat) const;
+
+	private:
+		RobotomyRequestForm();
+};
+#endif 
