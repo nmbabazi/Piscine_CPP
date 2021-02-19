@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 19:26:36 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/18 20:37:53 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:54:12 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	~Bureaucrat();
 
 	Bureaucrat &		operator=( Bureaucrat const & rhs );
-	std::string			getName()const;
+	std::string const	getName()const;
 	int					getGrade()const;
 	void				incrementGrade();
 	void				decrementGrade();
@@ -53,7 +53,7 @@ public:
 
 private:
 	Bureaucrat();
-	std::string _name;
+	std::string const _name;
 	int			_grade;
 
 };

@@ -6,25 +6,20 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 11:37:35 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 14:12:36 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:19:11 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-{
-}
-
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Form("ShrubberyCreation", 145, 137)
 {
-	this->_target = target;
+	this->setTarget(target);
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
+ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ): Form(src)
 {
-	*this = src;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -35,10 +30,8 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 {
 	if ( this != &rhs )
 	{
-		this->_name = rhs.getName();
-		this->_signGrade = rhs.getSignGrade();
-		this->_execGrade = rhs.getExecGrade();
-		this->_target = rhs.getTarget();
+		this->setStatus(rhs.getStatus());
+		this->setTarget(rhs.getTarget());
 	}
 	return *this;
 }
@@ -71,6 +64,6 @@ void	ShrubberyCreationForm::exec(Bureaucrat &bureaucrat) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << ", can't executed" << '\n';
+		std::cout << e.what() << ", can't be executed" << '\n';
 	}
 }

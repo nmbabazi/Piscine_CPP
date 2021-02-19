@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:20:39 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 15:47:11 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:46:44 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main()
     std::cout << "********test ask the intern********" << std::endl;
     Intern someRandomIntern;
     Form* rrf;
+    rrf = someRandomIntern.makeForm("false form", "Computer");
     rrf = someRandomIntern.makeForm("robotomy request", "Computer");
     std::cout << "********test execut********" << std::endl;
     tom.signForm(president);

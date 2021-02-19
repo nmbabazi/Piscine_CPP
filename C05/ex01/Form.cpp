@@ -6,13 +6,11 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:23:45 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 11:31:00 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:03:43 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-
-Form::Form(){}
 
 Form::Form(std::string name, int signGrade, int execGrade): _name(name),
 			_signGrade(signGrade), _execGrade(execGrade), _status(false)
@@ -23,7 +21,11 @@ Form::Form(std::string name, int signGrade, int execGrade): _name(name),
 		throw Form::GradeTooLowException();
 }
 
-Form::Form( const  Form & src ){*this = src;}
+Form::Form( const  Form & src ):_name(src._name),
+			_signGrade(src._signGrade), _execGrade(src._execGrade), _status(false)
+{
+	*this = src;
+}
 
 Form::~ Form(){}
 
@@ -32,14 +34,12 @@ Form &				 Form::operator=(  Form const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->_name = rhs.getName();
-		this->_signGrade = rhs.getSignGrade();
-		this->_execGrade = rhs.getExecGrade();
+		this->_status = rhs.getStatus();
 	}
 	return *this;
 }
 
-std::string Form::getName()const {return _name;}
+std::string const	Form::getName()const {return _name;}
 int			Form::getSignGrade()const {return _signGrade;}
 int			Form::getExecGrade()const {return _execGrade;}
 bool		Form::getStatus()const {return _status;}

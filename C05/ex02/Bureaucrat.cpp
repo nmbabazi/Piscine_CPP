@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 20:05:05 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 14:01:14 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:25:46 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->_name = rhs.getName();
 		this->_grade = rhs.getGrade();
 	}
 	return *this;
@@ -60,7 +59,7 @@ void		Bureaucrat::decrementGrade()
 	
 }
 
-std::string Bureaucrat::getName()const {return _name;}
+std::string const Bureaucrat::getName()const {return _name;}
 int			Bureaucrat::getGrade()const {return _grade;}
 
 void		Bureaucrat::signForm(Form &form)

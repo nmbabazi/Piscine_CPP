@@ -6,23 +6,19 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 11:37:35 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 14:11:44 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:19:03 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(){}
-
 RobotomyRequestForm::RobotomyRequestForm(std::string target):Form("RobotomyRequest", 72, 45)
 {
-	this->_target = target;
+	this->setTarget(target);
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
-{
-	*this = src;
-}
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ): Form(src)
+{}
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
@@ -32,10 +28,8 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 {
 	if ( this != &rhs )
 	{
-		this->_name = rhs.getName();
-		this->_signGrade = rhs.getSignGrade();
-		this->_execGrade = rhs.getExecGrade();
-		this->_target = rhs.getTarget();
+		this->setStatus(rhs.getStatus());
+		this->setTarget(rhs.getTarget());
 	}
 	return *this;
 }
@@ -53,6 +47,6 @@ void	RobotomyRequestForm::exec(Bureaucrat &bureaucrat) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << ", can't executed" << '\n';
+		std::cout << e.what() << ", can't be executed" << '\n';
 	}
 }

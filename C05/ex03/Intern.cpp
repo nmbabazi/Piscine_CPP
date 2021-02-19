@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 14:26:56 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/19 16:21:15 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:41:29 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ Form *Intern::creathrubbery(std::string target){return new ShrubberyCreationForm
 
 Form	*Intern::makeForm(std::string name, std::string target)
 {
-	typedef Form* (*funct)(std::string target);
-	funct tab[] = {&creatRobot, &creatPresident, &creathrubbery};
+	typedef Form* (Intern::*funct)(std::string target);
+	funct tab[] = {&Intern::creatRobot, &Intern::creatPresident, &Intern::creathrubbery};
 	std::string names[]= {"robotomy request", "presidential pardon", "shrubbery creation"};
 	for (int i = 0; i < 3; i++)
 	{
 		if (name.compare(names[i]) == 0)
-			return tab[i](target);
+			return (this->*tab[i])(target);
 	}
 	std::cout << "unknown form type" << std::endl;
 	return NULL;
