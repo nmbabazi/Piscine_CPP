@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 18:19:42 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/22 17:40:38 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/22 19:29:44 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ class Converter
 		Converter();
 		std::string _input;
 		bool	_isDigit;
-		bool	_isSigned;
 		double	_numeric;
 
 };

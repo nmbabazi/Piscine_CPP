@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 18:24:45 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/22 18:30:53 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/22 19:30:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
+#include <math.h>
 
 Converter::Converter(std::string input): _input(input), _isSigned(false), _isDigit(false)
 {
@@ -18,14 +19,7 @@ Converter::Converter(std::string input): _input(input), _isSigned(false), _isDig
 	if (isdigit(input[0],loc))
 		_isDigit = true;
 	if (input[0] == '-' && isdigit(input[1],loc))
-	{
-		_isSigned = true;
 		_isDigit = true;
-	}
-	if ((_input[_input.length() - 1]) == 'f' && _isDigit)
-		_input.erase(_input.find('f'));
-	if (_input.compare("+inff") == 0 || _input.compare("-inff") == 0 || _input.compare("nanf") == 0 )
-		_input.erase(_input.end()-1);
 }
 
 Converter::Converter( const Converter & src ){*this = src;}
@@ -35,7 +29,8 @@ Converter::~Converter(){}
 Converter &				Converter::operator=( Converter const & rhs )
 {
 	this->_isDigit = rhs._isDigit;
-	this->_isSigned = rhs._isSigned;
+	this->_numeric = rhs._numeric;
+	this->_input = rhs._input;
 	return *this;
 }
 
@@ -79,7 +74,7 @@ void	Converter::convertInt()
 		|| _input.compare("-inff") == 0 || _input.compare("-inf") == 0
 		|| _input.compare("nanf") == 0 || _input.compare("nan") == 0)
 		throw Converter::ImpossibleException();
-	if (_numeric < INT_MIN || _numeric > INT_MAX)
+	if (_numeric < INT8_MIN || _numeric > INT8_MAX)
 		throw Converter::OverflowException();
 	else
 		std::cout << "int: " << static_cast<int>(_numeric) << std::endl;
@@ -88,6 +83,18 @@ void	Converter::convertInt()
 void	Converter::convertFloat()
 {
 	setNumeric();
+	if (!_input.compare("+inf") || !_input.compare("+inff"))
+	{
+		std::cout << "float: " << static_cast<float>(INFINITY) << std::endl; return;
+	}
+	if (!_input.compare("-inf") || !_input.compare("-inff"))
+	{
+		std::cout << "float: " << static_cast<float>(-INFINITY)<< std::endl; return;
+	}
+	if (!_input.compare("nanf") || !_input.compare("nan"))
+	{
+		std::cout << "float: " << static_cast<float>(NAN)<< std::endl; return;
+	}
 	if ( _numeric > FLT_MAX)
 		throw Converter::OverflowException();
 	else
@@ -103,6 +110,18 @@ void	Converter::convertFloat()
 void	Converter::convertDouble()
 {
 	setNumeric();
+	if (!_input.compare("+inf") || !_input.compare("+inff"))
+	{
+		std::cout << "double: " << static_cast<double>(INFINITY)<< std::endl; return;
+	}
+	if (!_input.compare("-inf") || !_input.compare("-inff"))
+	{
+		std::cout << "double: " << static_cast<double>(-INFINITY)<< std::endl; return;
+	}
+	if (!_input.compare("nanf") || !_input.compare("nan"))
+	{
+		std::cout << "double: " << static_cast<double>(NAN)<< std::endl; return;
+	}
 	if ( _numeric > DBL_MAX)
 		throw Converter::OverflowException();
 	else
