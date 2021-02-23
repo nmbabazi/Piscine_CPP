@@ -6,14 +6,14 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 18:24:45 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/22 19:30:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/23 14:49:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
 #include <math.h>
 
-Converter::Converter(std::string input): _input(input), _isSigned(false), _isDigit(false)
+Converter::Converter(std::string input): _input(input), _isDigit(false)
 {
 	std::locale loc;
 	if (isdigit(input[0],loc))
@@ -85,15 +85,15 @@ void	Converter::convertFloat()
 	setNumeric();
 	if (!_input.compare("+inf") || !_input.compare("+inff"))
 	{
-		std::cout << "float: " << static_cast<float>(INFINITY) << std::endl; return;
+		std::cout << "float: " << static_cast<float>(INFINITY) << "f" << std::endl; return;
 	}
 	if (!_input.compare("-inf") || !_input.compare("-inff"))
 	{
-		std::cout << "float: " << static_cast<float>(-INFINITY)<< std::endl; return;
+		std::cout << "float: " << static_cast<float>(-INFINITY)<< "f" << std::endl; return;
 	}
 	if (!_input.compare("nanf") || !_input.compare("nan"))
 	{
-		std::cout << "float: " << static_cast<float>(NAN)<< std::endl; return;
+		std::cout << "float: " << static_cast<float>(NAN)<< "f" << std::endl; return;
 	}
 	if ( _numeric > FLT_MAX)
 		throw Converter::OverflowException();
