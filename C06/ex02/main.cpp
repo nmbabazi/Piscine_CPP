@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 13:59:22 by user42            #+#    #+#             */
-/*   Updated: 2021/02/23 14:43:36 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/23 14:57:40 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,17 +74,11 @@ int main()
     C c;
     
     std::cout << "*****************FROM POINTER********************" << std::endl;
-    std::cout << "test A :";
     identify_from_pointer(&a);
-    std::cout << "test B :";
     identify_from_pointer(&b);
-    std::cout << "test C :";
     identify_from_pointer(&c);
     std::cout << "*****************FROM REF********************" << std::endl;
-    std::cout << "test A :";
     identify_from_reference(a);
-    std::cout << "test B :";
     identify_from_reference(b);
-    std::cout << "test C :";
     identify_from_reference(c);
 }
