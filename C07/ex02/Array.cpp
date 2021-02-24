@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Array.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:52:31 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/24 13:55:33 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:33:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
 template<typename T>
-Array<T>::Array(): _n(0)
+Array<T>::Array(): _n(0), _arr(NULL)
 {
-    _arr = new T;
 }
 
 template<typename T>
@@ -41,9 +40,8 @@ Array<T> & Array<T>::operator=(Array<T> const & rhs)
 {
     if ( this != &rhs )
 	{
-        if (this->_n)
+        if (this->_arr)
             delete[] this->_arr;
-        delete _arr;
 		this->_n = rhs._n;
         this->_arr = new T[_n];
         for (size_t i = 0; i < _n; i++)
@@ -72,7 +70,7 @@ char const *Array<T>::OutOfLimitsException::what() const throw()
 }
 
 template<typename T>
-std::ostream &			operator<<( std::ostream & o, Array<T> const & i )
+std::ostream &			operator<<( std::ostream & o, Array<T> & i )
 {
     for (size_t index = 0; index < i.size(); index++)
 	    o << i[index] << ", ";

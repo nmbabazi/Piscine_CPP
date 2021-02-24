@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:38:14 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/24 13:54:58 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:11:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ class Array
 };
 
 template<typename T>
-std::ostream &			operator<<( std::ostream & o, Array<T> const & i );
+std::ostream &			operator<<( std::ostream & o, Array<T> & i );
 
 #endif
