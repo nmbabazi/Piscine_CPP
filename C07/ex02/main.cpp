@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 13:34:39 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/24 14:36:30 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/25 19:07:03 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,24 @@ int main()
     std::cout << "test arr1 = arr2 (print arr1): " << arr1 << std::endl;
     Array<std::string> arr5(arr4);
     std::cout << "test arr5 from arr4 (print arr5): " << arr5 << std::endl;
+    std::cout << std::endl << "############# Test Array ###################"
+        <<  std::endl << std::endl;
+	Array< Array<int> > inseption;
+    std::cout << "test default constructeur : " << inseption << std::endl;
+    Array< Array<int> > fullInseption(3);
+	std::cout << "test full array : " << fullInseption << std::endl;
+    Array<int> inside(3);
+    inside[1] = 42;
+    fullInseption[0] = inside;
+    std::cout << "test operateur[] : " << fullInseption[0][1] << std::endl;
+    try
+    {
+        fullInseption[1][1] = 3;
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl; 
+    }
 	return 0;
     
 }

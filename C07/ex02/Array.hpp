@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:38:14 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/24 14:11:58 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/25 16:45:44 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ template<typename T>
 class Array
 {
     private:
-        int _n;
+        unsigned int _n;
         T *_arr;
     
     public:
         Array();
         ~Array();
-        Array(int n); 
+        Array(unsigned int n); 
         Array(Array const &src); 
         Array &		operator=(Array const & rhs); 
-        T &		    operator[](int const index);
+        T &		    operator[](unsigned int const index);
         class OutOfLimitsException : public std::exception
         {
         public:
             virtual const char *what() const throw();
         };
-        int size()const;
+        unsigned int size()const;
 };
 
 template<typename T>

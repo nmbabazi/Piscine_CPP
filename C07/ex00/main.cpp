@@ -6,12 +6,29 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:38:01 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/24 17:50:30 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:56:40 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 #include <iostream>
+
+class Awesome 
+{
+    public:
+    Awesome( int n ) : _n( n ) {}
+    bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+    bool operator!=( Awesome const & rhs ) const { return (this->_n != rhs._n); }
+    bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+    bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+    bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+    bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+    int get()const{return _n;}
+    private:
+    int _n;
+};
+
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
 int main( void ) {
 
@@ -53,5 +70,13 @@ int main( void ) {
     std::cout << "x = " << x << ", z = " << z << std::endl;
     std::cout << "min( x, z ) = " << ::min( x, z ) << std::endl;
     std::cout << "max( x, z ) = " << ::max( x, z ) << std::endl;
+    std::cout << std::endl << "############# Test Correction ###################"
+        <<  std::endl << std::endl;
+    Awesome awe(42);
+    Awesome some(24);
+    ::swap(awe, some);
+    std::cout << "awe = " << awe << ", some = " << some << std::endl;
+    std::cout << "min( awe, some ) = " << ::min( awe, some ) << std::endl;
+    std::cout << "max( awe, some ) = " << ::max( awe, some ) << std::endl;
     return 0;
 }

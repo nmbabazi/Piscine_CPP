@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:38:04 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/23 19:54:53 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:52:46 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 template<typename T>
 void swap(T &arg1, T &arg2)
 {
-    T temp;
-    temp = arg1;
+    T temp = arg1;
     arg1 = arg2;
     arg2 = temp;
 }

@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 10:46:32 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/24 17:44:10 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:50:49 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,21 @@
 #include <string.h>
 #include "iter.hpp"
 
-int main()
+class Awesome
+{
+public:
+	Awesome( void ) : _n( 42 ) { return; }
+	int get( void ) const { return this->_n; }
+private:
+	int _n;
+};
+
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
+
+int main() 
 {
 	std::cout << std::endl << "############# Test char ###################"
         <<  std::endl << std::endl;
@@ -28,5 +42,14 @@ int main()
         <<  std::endl << std::endl;
 	int tab[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 	::iter(tab, 9, fonction);
-    return (0);
+	std::cout << std::endl << "############# Test correction ###################"
+		<<  std::endl << std::endl;
+	{
+		int tab[] = { 0, 1, 2, 3, 4 }; 
+		Awesome tab2[5];
+
+		iter( tab, 5, print );
+		iter( tab2, 5, print );
+	}
+	return 0;
 }
