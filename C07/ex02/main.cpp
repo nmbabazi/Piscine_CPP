@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 13:34:39 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/25 19:07:03 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/26 13:37:45 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,6 @@ int main()
     {
         std::cout << e.what() << std::endl; 
     }
-    std::cout << std::endl << "############# Test assignation/copy ###################"
-        <<  std::endl << std::endl;
-    arr1 = arr2;
-    std::cout << "test arr1 = arr2 (print arr1): " << arr1 << std::endl;
-    Array<std::string> arr5(arr4);
-    std::cout << "test arr5 from arr4 (print arr5): " << arr5 << std::endl;
     std::cout << std::endl << "############# Test Array ###################"
         <<  std::endl << std::endl;
 	Array< Array<int> > inseption;
@@ -74,6 +68,13 @@ int main()
     {
         std::cout << e.what() << std::endl; 
     }
+    std::cout << std::endl << "############# Test assignation/copy ###################"
+        <<  std::endl << std::endl;
+    
+    arr1 = arr2;
+    std::cout << "test arr1 = arr2 (print arr1): " << arr1 << std::endl;
+    Array<std::string> arr5(arr4);
+    std::cout << "test arr5 from arr4 (print arr5): " << arr5 << std::endl;
 	return 0;
     
 }

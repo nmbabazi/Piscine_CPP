@@ -6,7 +6,7 @@
 /*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:52:31 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/25 16:46:48 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/26 13:39:15 by nailambz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Array<T>::~Array()
 template<typename T>
 Array<T>::Array(Array<T> const &src)
 {
-    this->operator= (src);
+    *this = src;
 }
 
 template<typename T>
@@ -40,8 +40,6 @@ Array<T> & Array<T>::operator=(Array<T> const & rhs)
 {
     if ( this != &rhs )
 	{
-        if (this->_arr)
-            delete[] this->_arr;
 		this->_n = rhs._n;
         this->_arr = new T[_n];
         for (size_t i = 0; i < _n; i++)
