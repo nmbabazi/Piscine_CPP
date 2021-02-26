@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 18:45:47 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 19:51:52 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/26 20:09:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Mutantstack.hpp"
-#include "Mutantstack.cpp"
-# include <list>
+#include <list>
 
 int main()
 {
@@ -71,7 +70,7 @@ int main()
 		std::cout << *it2 << std::endl;
 		++it2;
 	}
-	std::cout << std::endl << "############# assignation ###################"
+	std::cout << std::endl << "############# revers ###################"
         <<  std::endl << std::endl;
 	MutantStack<int> mut3;
 	mut3 = mstack;
@@ -91,7 +90,7 @@ int main()
     --rit;
 	while (rit != rite)
 	{
-		std::cout << *rit << " ";
+		std::cout << *rit << std::endl;
 		++rit;
 	}
 	std::cout << std::endl;

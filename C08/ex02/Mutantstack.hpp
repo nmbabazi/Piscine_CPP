@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Mutantstack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 18:13:29 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 19:51:01 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/26 20:07:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ class MutantStack : public std::stack<T>
 
 		MutantStack(): std::stack<T>() {};
 		MutantStack(MutantStack<T> const &src): std::stack<T>(src) {} ;
-		MutantStack<T> &operator=(MutantStack<T> const &rhs);
+		MutantStack& operator=(MutantStack const &rhs)
+		{
+			if (this != &rhs)
+				std::stack<T>::operator=(rhs);
+			return *this;
+		}
 		virtual ~MutantStack() {};
 
 		//créer des "iterators de stack"
