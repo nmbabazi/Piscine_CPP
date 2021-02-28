@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:59:07 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 17:50:37 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/28 14:07:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ class Span
 		class 	FullCapacityException: public std::exception
 		{
 			public:
-				virtual const char *what() const throw(){
-					return "The container is at full capacity";
-				}
+				virtual const char *what() const throw();
 		};
 		class 	NoSpanException: public std::exception
 		{
 			public:
-				virtual const char *what() const throw(){
-					return "No span to find";
-				}
+				virtual const char *what() const throw();
 		};
 		
 

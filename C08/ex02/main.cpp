@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 18:45:47 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 20:09:15 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/28 14:23:21 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main()
 		std::cout << *it2 << std::endl;
 		++it2;
 	}
-	std::cout << std::endl << "############# revers ###################"
+	std::cout << std::endl << "############# assignation ###################"
         <<  std::endl << std::endl;
 	MutantStack<int> mut3;
 	mut3 = mstack;
@@ -82,7 +82,7 @@ int main()
 		++it3;
 	}
 	std::cout << std::endl;
-	std::cout << std::endl << "############# assignation ###################"
+	std::cout << std::endl << "############# revers ###################"
         <<  std::endl << std::endl;
 	MutantStack<int>::reverse_iterator rit = mut3.rbegin();
 	MutantStack<int>::reverse_iterator rite = mut3.rend();

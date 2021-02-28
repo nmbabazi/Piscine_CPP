@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:19:59 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 14:56:52 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/28 14:03:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <list>
 #include <vector>
 #include <set>
+
+const char *NotFoundException::what() const throw()
+{
+	return "Not found in container";
+}
 
 
 int main()

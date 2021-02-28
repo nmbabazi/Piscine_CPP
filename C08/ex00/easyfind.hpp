@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nailambz <nailambz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:12:08 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 15:21:18 by nailambz         ###   ########.fr       */
+/*   Updated: 2021/02/28 14:03:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ class NotFoundException: public std::exception
 {
 	public:
 		NotFoundException(){}
-		virtual const char *what() const throw(){
-			return "Not found in container";
-		}
+		virtual const char *what() const throw();
 };
 
 

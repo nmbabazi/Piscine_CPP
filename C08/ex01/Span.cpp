@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:59:18 by nailambz          #+#    #+#             */
-/*   Updated: 2021/02/26 20:14:47 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/28 14:07:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	Span::addNumber(int start, int end)
 	}
 }
 
-
 int		Span::shortestSpan()
 {
 	if (_vect.size() <= 1)
@@ -80,4 +79,14 @@ int		Span::longestSpan()
 	int max = *std::max_element(_vect.begin(), _vect.end());
     int min = *std::min_element(_vect.begin(), _vect.end());
 	return max - min;
+}
+
+const char *Span::FullCapacityException::what() const throw()
+{
+	return "The container is at full capacity";
+}
+
+const char *Span::NoSpanException::what() const throw()
+{
+	return "No span to find";
 }
